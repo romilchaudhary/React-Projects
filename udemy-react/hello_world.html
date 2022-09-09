@@ -1,0 +1,54 @@
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<div id="root">
+
+</div>
+
+<div id="root2">
+
+</div>
+
+<script type="text/babel">
+    const name = "romil"
+    function getLastName(lName){
+        return lName
+    }
+
+    const element = (
+        <h1 className="greetings">
+            hello world 2
+        </h1>
+    );
+
+    const element2 = React.createElement(
+        'h2',
+        {'className': "greetings2"},
+        'Hello World New'
+    );
+
+    // const element3 = {
+    //     type: 'h3',
+    //     props: {
+    //         'className': "greetings3",
+    //         'children': 'Hello World3'
+    //     }
+    // }
+    
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<div><h1>Hello World! {name} and last name is {getLastName("kumar")} and </h1>{element} and {element2} and</div>);
+
+    const root2 = ReactDOM.createRoot(document.getElementById("root2"))
+    function tick(){
+        const ele = (
+            <div>
+                <h1>
+                    time is {new Date().toLocaleTimeString()}
+                </h1>    
+            </div>
+        )
+        root2.render(ele)
+    }
+    setInterval(tick, 1000)
+    
+</script>
